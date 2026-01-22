@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+  agent { label 'agent-1' }
  
   parameters {
     choice(name: 'APP_NAME', choices: ['app-a', 'app-b'])
