@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Terraform Init') {
       steps {
-        dir("env/${APP_NAME}") {
+        dir("env/${params.APP_NAME}") {
           sh 'terraform init'
         }
       }
@@ -16,7 +16,7 @@ pipeline {
  
     stage('Terraform Apply') {
       steps {
-        dir("env/${APP_NAME}") {
+        dir("env/${params.APP_NAME}") {
           sh 'terraform apply -auto-approve'
         }
       }
