@@ -21,10 +21,11 @@ pipeline {
         stage('Terraform Apply') {
             steps {
                 dir("terraform-repo/env/${params.APP_NAME}") {
-                    sh 'terraform apply -auto-approve'
+                    sh 'terraform destroy -auto-approve'
                 }
             }
         }
     }
 
 }
+
